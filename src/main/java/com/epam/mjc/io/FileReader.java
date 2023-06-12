@@ -18,7 +18,7 @@ public class FileReader {
             profile = new Profile(name, Integer.parseInt(age), email, Long.parseLong(phoneNum));
             return profile;
         } catch (IOException e) {
-            System.err.println(e);
+            System.err.println(e.getMessage());
         }
        return new Profile();
     }
