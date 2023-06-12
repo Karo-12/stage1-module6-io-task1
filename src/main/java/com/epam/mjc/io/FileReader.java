@@ -3,6 +3,8 @@ package com.epam.mjc.io;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 
 public class FileReader {
@@ -18,7 +20,8 @@ public class FileReader {
             profile = new Profile(name, Integer.parseInt(age), email, Long.parseLong(phoneNum));
             return profile;
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            Logger logger = Logger.getLogger(FileReader.class.getName());
+            logger.log(Level.WARNING, e.getMessage());
         }
        return new Profile();
     }
